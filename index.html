@@ -21,6 +21,27 @@
     <h1 ng-bind="titolo"></h1>
     <h1 ng-bind="titolo1"></h1>
     <h1 ng-bind="titolo2"></h1>
+    <div class="from-group col-md-6">
+      <label for="nome">Nome</label>
+      <input ng-model="ilmionome"type="text" class="form control" id="nome" name="nome"placeholder="inserisci nome">
+      <div class="col-md-2"><button class="btn btn-success" type="button" name="button" ng-click="stampa()">Stampa</button></div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="nome">Id</label>
+      <input ng-model="nuova.id"type="text" class="form control" id="nome" name="nome"placeholder="inserisci nome">
+      <label for="nome">Nome</label>
+      <input ng-model="nuova.nome"type="text" class="form control" id="nome" name="nome"placeholder="inserisci nome">
+      <label for="nome">Descrizione</label>
+      <input ng-model="nuova.descrizione"type="text" class="form control" id="nome" name="nome"placeholder="inserisci nome">
+      <label for="nome">Slots</label>
+      <input ng-model="nuova.slots"type="text" class="form control" id="nome" name="nome"placeholder="inserisci nome">
+      <label for="nome">Image</label>
+      <input ng-model="nuova.image"type="text" class="form control" id="nome" name="nome"placeholder="inserisci nome">
+      <button class="btn btn-success" type="button" name="button" ng-click="inserisci()">Inserisci</button>
+    </div>
+
+    <p ng-bind="ilmionome"></p>
     <div class="row">
       <table class="table table-hover">
         <thead>
@@ -32,7 +53,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="arma in listaarmi">
+          <tr ng-repeat="arma in listaarmi track by $index"> <!-- track by $index serve per far creare anche elementi uguali -->
             <td><img ng-src="{{arma.image}}" width="100px"></td>
             <td>{{arma.nome}}</td>
             <td>{{arma.descrizione}}</td>

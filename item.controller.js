@@ -20,9 +20,23 @@ angular.module('app').controller('PrimoitemCrtl',function($scope){
     image:"http://i55.tinypic.com/11kgi68.gif"
   }];
 
+  // $scope.nuova=[{
+  //   id: "",
+  //   nome:"",
+  //   descrizione:"",
+  //   slots:"",
+  //   image:""
+  // }]; anche senza questo funzione perche la variabile nuova automaticamente
+
   $scope.elimina= function(id, indice){
-    console.log(id, indice)
     $scope.listaarmi.splice(indice, 1);
+  }
+  $scope.stampa= function () {
+    console.log($scope.ilmionome);
+  }
+
+  $scope.inserisci= function(){
+    $scope.listaarmi.push($scope.nuova);
   }
 
 
