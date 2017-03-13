@@ -15,7 +15,34 @@
 </head>
 
 <body ng-app="app">
+  <h1>Par e pall eddie fusc</h1>
   <!-- bind the item controller to an element -->
+  <div ng-controller="PrimoitemCrtl" class="container">
+    <h1 ng-bind="titolo"></h1>
+    <h1 ng-bind="titolo1"></h1>
+    <h1 ng-bind="titolo2"></h1>
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>immagine</th>
+            <th>nome</th>
+            <th>descrizione</th>
+            <th>colpi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="arma in listaarmi">
+            <td><img ng-src="{{arma.image}}" width="100px"></td>
+            <td>{{arma.nome}}</td>
+            <td>{{arma.descrizione}}</td>
+            <td>{{arma.slots}}</td>
+            <td><button ng-click="elimina(arma.id,$index)" class="btn btn-danger">Elimina</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <!-- interpolate the data to the view -->
   <!-- understanding the scope -->
   <!-- add handles for behaviours -->
@@ -23,6 +50,7 @@
   <script src="node_modules/angular/angular.min.js"></script>
   <script src="app.js"></script>
   <!-- load the item controller -->
+  <script src="item.controller.js"></script>
 </body>
 
 </html>
